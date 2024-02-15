@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+
 using static Common.ValidationConstants;
+
 namespace TaskBoard.Core.Models
 {
     public class BoardViewModel

@@ -12,9 +12,10 @@ namespace TaskBoard.Controllers
             this.boardService = _boardService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> All()
         {
-            return View();
+            var model = await boardService.GetBoardsAsync();
+            return View(model);
         }
     }
 }
