@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using TaskBoard.Models;
+using TaskBoard.Core.Models;
 
 namespace TaskBoard.Controllers
 {
