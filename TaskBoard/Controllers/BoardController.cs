@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TaskBoard.Core.Models;
 using TaskBoard.Core.Services.Interfaces;
 
 namespace TaskBoard.Controllers
@@ -14,8 +15,9 @@ namespace TaskBoard.Controllers
 
         public async Task<IActionResult> All()
         {
-            var model = await boardService.GetBoardsAsync();
+            var model = await boardService.ShowAllBoardsAsync();
             return View(model);
         }
+
     }
 }

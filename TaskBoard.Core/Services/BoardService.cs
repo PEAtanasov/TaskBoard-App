@@ -13,7 +13,7 @@ namespace TaskBoard.Core.Services
         {
             this.data = context;
         }
-        public async Task<IEnumerable<BoardViewModel>> GetBoardsAsync()
+        public async Task<IEnumerable<BoardViewModel>> ShowAllBoardsAsync()
         {
             var boards = await data.Boards
                 .AsNoTracking()
@@ -34,6 +34,21 @@ namespace TaskBoard.Core.Services
 
             return boards;
         }
+
+        public async Task<IEnumerable<TaskBoardModel>> GetBoardsAsync()
+        {
+            var boards = await data.Boards
+                .AsNoTracking()
+                .Select(b => new TaskBoardModel()
+                {
+                    Id = b.Id,
+                    Name = b.Name,
+                })
+                .ToListAsync();
+
+            return boards;
+        }
+
 
         public Task SaveAsync()
         {

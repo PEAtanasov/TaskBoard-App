@@ -44,7 +44,7 @@ public class Task
     /// </summary>
     [ForeignKey(nameof(Board))]
     [Comment("Board identifier")]
-    public int? BoardId { get; set; }
+    public int BoardId { get; set; }
 
     public Board? Board { get; set; }
 
