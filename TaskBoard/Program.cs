@@ -12,6 +12,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddScoped<IBoardService, BoardService>();
 builder.Services.AddScoped<ITaskService, TaskService>();
+builder.Services.AddScoped<IHomePageService, HomePageService>();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => 
